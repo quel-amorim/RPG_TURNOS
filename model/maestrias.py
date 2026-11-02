@@ -10,6 +10,7 @@ class Maestria:
             'inteligencia' : 10
         }
         self.xpAtual = 0
+        self.limitadorUp = 100
 
     def exibirAtributos(self):
         print('-------- {self.nome} Atributos ---------\n')
@@ -20,9 +21,35 @@ class Maestria:
         print(f'    INT : {self.atributos['inteligencia']}')
 
     def sistemaUP(self):
-        if self.xpAtual > 100:
+        if self.xpAtual > self.limitadorUp:
             print('+1 Nivel')
             self.nivel +=1
-            self.xpAtual = 0
+            self.limitadorUp += 100
 
         return self.nivel
+
+class Lutador(Maestria):
+    def __init__(self):
+        super().__init__("Lutador")
+
+class Mago(Maestria):
+    def __init__(self):
+        super().__init__("Mago")
+
+class Arqueiro(Maestria):
+    def __init__(self):
+        super().__init__("Arqueiro")
+
+
+gerencimentoMaestria = []
+
+l1 = Lutador()
+m1 = Mago()
+a1 = Arqueiro()
+
+gerencimentoMaestria.append(l1)
+gerencimentoMaestria.append(m1)
+gerencimentoMaestria.append(a1)
+
+for maestria in gerencimentoMaestria:
+    print(f' & {maestria.nome} Nv {maestria.nivel}')
