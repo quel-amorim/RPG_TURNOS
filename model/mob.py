@@ -15,7 +15,7 @@ class Mob:
         self.moedaDrop()
 
     def exibirAtributos(self):
-            print('-------- {self.nome} Atributos ---------\n')
+            print(f'-------- {self.nome} Atributos ---------\n')
             print(f'    VIT : {self.atributos['vitalidade']}')
             print(f'    STR : {self.atributos['forca']}')
             print(f'    RES : {self.atributos['defesa']}')
@@ -57,3 +57,22 @@ class Anjo(Mob):
           self.atributos['defesa'] += 5
           self.atributos['agilidade'] += 5
           self.atributos['inteligencia'] += 5
+
+
+z1 = Zumbi()
+d1 = Demonio()
+a2 = Anjo()
+
+gerenciamentoMobs = []
+gerenciamentoMobs.append(z1)
+gerenciamentoMobs.append(d1)
+gerenciamentoMobs.append(a2)
+
+for mob in gerenciamentoMobs:
+    print(f' & {mob.nome} Nv {mob.nivel} | Drop XP : {mob.xpDrop}')
+
+z1.exibirAtributos()
+print()
+d1.exibirAtributos()
+print()
+a2.exibirAtributos()
